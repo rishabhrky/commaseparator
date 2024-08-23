@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Separator Tool</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Separator Tool</h1>
+        <textarea id="input" placeholder="Enter values, each on a new line"></textarea>
+        
+        <button id="settingsButton" onclick="toggleSettings()">Convert Settings</button>
+        
+        <div id="settingsPanel" class="settings-panel hidden">
+            <div>
+                <label for="delimiter">Choose delimiter:</label>
+                <select id="delimiter">
+                    <option value=",">Comma (,)</option>
+                    <option value=";">Semicolon (;)</option>
+                    <option value="|">Pipe (|)</option>
+                    <option value="/">Slash (/)</option>
+                    <option value=" - ">Dash ( - )</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="tagStart">Start tag:</label>
+                <input type="text" id="tagStart" placeholder="<strong>">
+            </div>
+
+            <div>
+                <label for="tagEnd">End tag:</label>
+                <input type="text" id="tagEnd" placeholder="</strong>">
+            </div>
+
+            <div>
+                <label for="trimWhitespace">Trim whitespace:</label>
+                <input type="checkbox" id="trimWhitespace" checked>
+            </div>
+
+            <button onclick="convertToFormatted()">Convert</button>
+        </div>
+
+        <textarea id="output" readonly placeholder="Formatted values will appear here"></textarea>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
